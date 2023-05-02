@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -73,5 +73,29 @@
             </div>
         </div>
     </div>
+</div> --}}
+<div class="container">
+    <form method="POST" class="login-email" action="{{ route('register') }}">
+        @csrf
+
+        <p class="login-text" style="font-size: 2rem; font-weight: 800;">Register</p>
+        <div class="input-group">
+            <input type="text" placeholder="Username" name="username" value="" required>
+        </div>
+        <div class="input-group">
+            <input type="email" placeholder="Email" name="email" value="" required>
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="Password" name="password" value="" required>
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="Confirm Password" name="cpassword" value="" required>
+        </div>
+        <div class="input-group">
+            <button name="submit" class="btn">Register</button>
+        </div>
+        <p class="login-register-text">Anda sudah punya akun? <a href="{{ route('login') }}">{{ __('Login') }}</a></p>
+        {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
+    </form>
 </div>
 @endsection

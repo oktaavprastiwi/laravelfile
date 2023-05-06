@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('content')
-{{-- <div class="container">
+<!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -73,23 +73,23 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>  -->
 <div class="container">
     <form method="POST" class="login-email" action="{{ route('register') }}">
         @csrf
 
         <p class="login-text" style="font-size: 2rem; font-weight: 800;">Register</p>
         <div class="input-group">
-            <input type="text" placeholder="Username" name="username" value="" required>
+            <input type="text" placeholder="name" name="name" value="" required>
         </div>
         <div class="input-group">
-            <input type="email" placeholder="Email" name="email" value="" required>
+            <input type="email" placeholder="email" name="email" value="" required>
         </div>
         <div class="input-group">
-            <input type="password" placeholder="Password" name="password" value="" required>
+            <input type="password" placeholder="password" name="password" value="" required>
         </div>
         <div class="input-group">
-            <input type="password" placeholder="Confirm Password" name="cpassword" value="" required>
+            <input type="password" placeholder="Confirm password" name="password-confirm" value="" required>
         </div>
         <div class="input-group">
             <button name="submit" class="btn">Register</button>
